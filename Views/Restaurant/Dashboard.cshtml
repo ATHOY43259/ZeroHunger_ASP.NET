@@ -1,0 +1,10 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_RestaurantLayout.cshtml";
+}
+
+<h2>@Session["restaurantName"] Dashboard</h2>
+<div class="form-horizontal">
+    <a href="/Restaurant/OpenRequest">Food Collection Request</a>
+</div>

@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Admin Dashboard</h2>
+
+<table class="table">
+    <tr>
+        <th>Restaurant Name</th>
+        <th>Creation Time</th>
+        <th>Accept Time</th>
+        <th>Work Done</th>
+        <th>Assigned Employee</th>
+        <th>Status</th>
+    </tr>
+    @foreach(var data in Model)
+    {
+        <tr>
+            <td>@data.restaurant_name</td>
+            <td>@data.created_time</td>
+            <td>@data.accept_time</td>
+            <td>@data.done_time</td>
+            <td>@data.employee_id</td>
+            <td>@data.status</td>
+        </tr>
+    }
+
+</table>
+

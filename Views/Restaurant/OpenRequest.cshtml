@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "OpenRequest";
+    Layout = "~/Views/Shared/_RestaurantLayout.cshtml";
+}
+
+<h2>Restaurant Dashboard</h2>
+<div class="form-horizontal">
+    <h4>Collection Request</h4>
+</div>
+<form action="" method="post">
+    <input type="text" name="restaurant_name" value=@Session["restaurantName"] hidden />
+    <input type="text" name="status" value="Pending" hidden />
+    <input type="datetime" name="created_time" value=@DateTime.Now.ToShortTimeString(); hidden />
+    <input type="number" name="employee_id" value="1" hidden />
+    <input type="submit" class="btn btn-success" value="Open Request" />
+</form>

@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "AssignedRequest";
+    Layout = "~/Views/Shared/_EmplyeeLayout.cshtml";
+}
+
+<h2>Assigned Request</h2>
+@ViewBag.id
+<table class="table">
+    <tr>
+        <th>Restaurant Name</th>
+        <th>Creation Time</th>
+        <th>Action</th>
+    </tr>
+    @if (Model != null)
+    {
+        foreach (var data in Model)
+        {
+            <form action="" method="post">
+                <tr>
+                    <td>@data.restaurant_name</td>
+                    <td>@data.created_time</td>
+                    <td>
+                        <input type="text" name="id" value=@data.id hidden />
+                        <input type="text" name="restaurant_name" value=@data.restaurant_name hidden />
+                        <input type="datetime" name="created_time" value=@data.created_time hidden />
+                        <input type="datetime" name="accept_time" value=@data.accept_time hidden />
+                        <input type="datetime" name="done_time" value=@DateTime.Now.ToShortTimeString() ; hidden />
+                        <input type="number" name="employee_id" value="@data.employee_id" hidden />
+                        <input type="text" name="status" value="Done" hidden />
+
+                        <input type="submit" class="btn btn-success" value="Accept Request" />
+                    </td>
+                </tr>
+            </form>
+        }
+    }
+
+</table>
